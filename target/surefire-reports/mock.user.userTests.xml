@@ -1,0 +1,97 @@
+<testsuite failures="1"
+           name="mock/user/userTests.feature"
+           skipped="0"
+           tests="3"
+           time="4.822149">
+   <testcase classname="mock.user.userTests" name="Create user" time="2.108529">
+      <system-out>* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def createQuery = read('createUserQuery.graphql') ....................... passed
+* def expectedSchemaResponse = read('createUserResponseSchema.json') ...... passed
+* def createVariable = {name: 'Patricia Lebsack', username: 'Karianne', email: 'Julianne.OConner@kory.org', street: 'Hoeger Mall', city: 'South Elvis', zipcode: '53919-4257', phone: '493-170-9623 x156', website: 'kale.biz', companyName: 'Robel-Corkery'} . passed
+When request {query: '#(createQuery)', variables: '#(createVariable)'} .... passed
+And print createQuery ..................................................... passed
+And print createVariable .................................................. passed
+And method post ........................................................... passed
+And print response ........................................................ passed
+Then status 200 ........................................................... passed
+And match response == expectedSchemaResponse .............................. passed
+And match response.data.createUser.name == 'Patricia Lebsack' ............. passed</system-out>
+   </testcase>
+   <testcase classname="mock.user.userTests"
+             name="Get list user"
+             time="2.677211">
+      <system-out>* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def createQuery = read('createUserQuery.graphql') ....................... passed
+* def expectedSchemaResponse = read('createUserResponseSchema.json') ...... passed
+* def createVariable = {name: 'Patricia Lebsack', username: 'Karianne', email: 'Julianne.OConner@kory.org', street: 'Hoeger Mall', city: 'South Elvis', zipcode: '53919-4257', phone: '493-170-9623 x156', website: 'kale.biz', companyName: 'Robel-Corkery'} . passed
+When request {query: '#(createQuery)', variables: '#(createVariable)'} .... passed
+And print createQuery ..................................................... passed
+And print createVariable .................................................. passed
+And method post ........................................................... passed
+And print response ........................................................ passed
+Then status 200 ........................................................... passed
+And match response == expectedSchemaResponse .............................. passed
+And match response.data.createUser.name == 'Patricia Lebsack' ............. passed
+* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def getQuery = read('getListUserQuery.graphql') ......................... passed
+* def getVariable = {limit : 3} ........................................... passed
+When request {query: '#(getQuery)', variables: '#(getVariable)'} .......... passed
+And print getQuery ........................................................ passed
+And print getVariable ..................................................... passed
+And method post ........................................................... passed
+And print response ........................................................ passed
+Then status 200 ........................................................... passed
+And match each response.data.users.data[*].id != '#null' .................. passed
+And assert response.data.users.data.length == 3 ........................... passed</system-out>
+   </testcase>
+   <testcase classname="mock.user.userTests"
+             name="Get detail user"
+             time="0.036409">
+      <failure message="userTests.feature:37 - &#xA;-unknown-:6 - javascript evaluation failed: Java.type('dataGenerator'), java.lang.ClassNotFoundException: dataGenerator">* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def createQuery = read('createUserQuery.graphql') ....................... passed
+* def expectedSchemaResponse = read('createUserResponseSchema.json') ...... passed
+* def createVariable = {name: 'Patricia Lebsack', username: 'Karianne', email: 'Julianne.OConner@kory.org', street: 'Hoeger Mall', city: 'South Elvis', zipcode: '53919-4257', phone: '493-170-9623 x156', website: 'kale.biz', companyName: 'Robel-Corkery'} . passed
+When request {query: '#(createQuery)', variables: '#(createVariable)'} .... passed
+And print createQuery ..................................................... passed
+And print createVariable .................................................. passed
+And method post ........................................................... passed
+And print response ........................................................ passed
+Then status 200 ........................................................... passed
+And match response == expectedSchemaResponse .............................. passed
+And match response.data.createUser.name == 'Patricia Lebsack' ............. passed
+* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def getQuery = read('getListUserQuery.graphql') ......................... passed
+* def getVariable = {limit : 3} ........................................... passed
+When request {query: '#(getQuery)', variables: '#(getVariable)'} .......... passed
+And print getQuery ........................................................ passed
+And print getVariable ..................................................... passed
+And method post ........................................................... passed
+And print response ........................................................ passed
+Then status 200 ........................................................... passed
+And match each response.data.users.data[*].id != '#null' .................. passed
+And assert response.data.users.data.length == 3 ........................... passed
+* url urlBase ............................................................. passed
+Given header User-Agent = 'lalala' ........................................ passed
+* def getListUser = call read('reUsableUserSteps.feature@GetListUser') .... failed
+
+Stack Trace:
+com.intuit.karate.exception.KarateException: userTests.feature:37 - 
+-unknown-:6 - javascript evaluation failed: Java.type('dataGenerator'), java.lang.ClassNotFoundException: dataGenerator
+	at ✽.* def getListUser = call read('reUsableUserSteps.feature@GetListUser') (userTests.feature:37)
+
+* def getQuery = read('getDetailUserQuery.graphql') ....................... skipped
+* def getVariable = {id: '#(getListUser.id)'} ............................. skipped
+When request {query: '#(getQuery)', variables: '#(getVariable)'} .......... skipped
+And print getQuery ........................................................ skipped
+And print getVariable ..................................................... skipped
+And method post ........................................................... skipped
+And print response ........................................................ skipped
+Then status 200 ........................................................... skipped
+And match response.data.user.name == '#(getListUser.name)' ................ skipped</failure>
+   </testcase>
+</testsuite>

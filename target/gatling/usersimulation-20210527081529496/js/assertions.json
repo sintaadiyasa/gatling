@@ -1,0 +1,10 @@
+{
+  "simulation": "mock.UserSimulation",
+  "simulationId": "usersimulation",
+  "start": 1622103329496,
+  "description": "",
+  "scenarios": ["Create User"],
+  "assertions": [
+
+  ]
+}

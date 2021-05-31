@@ -1,0 +1,1 @@
+{"features":1,"ignored":1,"efficiency":0.4118326747800837,"failures":{"mock.user.userTests":"userTests.feature:37 - \n-unknown-:6 - javascript evaluation failed: Java.type('dataGenerator'), java.lang.ClassNotFoundException: dataGenerator"},"totalTime":4822.148789,"threads":3,"scenarios":3,"failed":1,"passed":2,"version":"0.9.5","elapsedTime":3903.0}

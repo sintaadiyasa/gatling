@@ -1,0 +1,763 @@
+15:15:04.240 [main] INFO  com.intuit.karate.Runner - waiting for parallel features to complete ...
+15:15:04.542 [ForkJoinPool-1-worker-2] INFO  com.intuit.karate - [print] query users(
+    $limit: Int
+){
+    users(
+        options: {
+            paginate: {
+                limit: $limit
+            }
+        }
+    ){
+        data{
+            id
+            name
+            username
+            email
+            address{
+                street
+                city
+                zipcode
+            }
+            phone
+            website
+            company{
+                name
+            }
+        }
+    }
+}
+15:15:04.544 [ForkJoinPool-1-worker-3] INFO  com.intuit.karate - scenario called at line: 10 by tag: @GetListUser
+15:15:04.544 [ForkJoinPool-1-worker-1] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:04.547 [ForkJoinPool-1-worker-2] INFO  com.intuit.karate - [print] {
+  "limit": 3
+}
+
+15:15:04.547 [ForkJoinPool-1-worker-1] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:04.557 [ForkJoinPool-1-worker-3] ERROR com.intuit.karate - feature call failed: classpath:mock/user/reUsableUserSteps.feature
+arg: null
+-unknown-:6 - javascript evaluation failed: Java.type('dataGenerator'), java.lang.ClassNotFoundException: dataGenerator
+15:15:06.629 [ForkJoinPool-1-worker-1] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:07.186 [ForkJoinPool-1-worker-2] INFO  com.intuit.karate - [print] {
+  "data": {
+    "users": {
+      "data": [
+        {
+          "website": "hildegard.org",
+          "address": {
+            "zipcode": "92998-3874",
+            "city": "Gwenborough",
+            "street": "Kulas Light"
+          },
+          "phone": "1-770-736-8031 x56442",
+          "name": "Leanne Graham",
+          "company": {
+            "name": "Romaguera-Crona"
+          },
+          "id": "1",
+          "email": "Sincere@april.biz",
+          "username": "Bret"
+        },
+        {
+          "website": "anastasia.net",
+          "address": {
+            "zipcode": "90566-7771",
+            "city": "Wisokyburgh",
+            "street": "Victor Plains"
+          },
+          "phone": "010-692-6593 x09125",
+          "name": "Ervin Howell",
+          "company": {
+            "name": "Deckow-Crist"
+          },
+          "id": "2",
+          "email": "Shanna@melissa.tv",
+          "username": "Antonette"
+        },
+        {
+          "website": "ramiro.info",
+          "address": {
+            "zipcode": "59590-4157",
+            "city": "McKenziehaven",
+            "street": "Douglas Extension"
+          },
+          "phone": "1-463-123-4447",
+          "name": "Clementine Bauch",
+          "company": {
+            "name": "Romaguera-Jacobson"
+          },
+          "id": "3",
+          "email": "Nathan@yesenia.net",
+          "username": "Samantha"
+        }
+      ]
+    }
+  }
+}
+
+15:15:07.466 [pool-1-thread-2] INFO  com.intuit.karate.Runner - <<fail>> feature 2 of 2: classpath:mock/user/userTests.feature
+15:15:21.328 [main] INFO  io.gatling.compiler.ZincCompiler$ - Compiling 1 Scala source and 1 Java source to /Users/sintaadiyasa/Documents/ISQA/gatling-isqa/target/test-classes ...
+15:15:25.740 [main] INFO  io.gatling.compiler.ZincCompiler$ - /Users/sintaadiyasa/Documents/ISQA/gatling-isqa/src/test/java/mock/developmentTestRunner.java: /Users/sintaadiyasa/Documents/ISQA/gatling-isqa/src/test/java/mock/developmentTestRunner.java uses unchecked or unsafe operations.
+15:15:25.741 [main] INFO  io.gatling.compiler.ZincCompiler$ - /Users/sintaadiyasa/Documents/ISQA/gatling-isqa/src/test/java/mock/developmentTestRunner.java: Recompile with -Xlint:unchecked for details.
+15:15:25.770 [main] INFO  io.gatling.compiler.ZincCompiler$ - Done compiling.
+15:15:27.447 [main] INFO  i.g.c.config.GatlingConfiguration$ - Gatling will try to use 'gatling.conf' as custom config file.
+15:15:28.676 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:15:29.533 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  i.g.c.stats.writer.ConsoleDataWriter - Initializing
+15:15:29.533 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  i.g.c.stats.writer.LogFileDataWriter - Initializing
+15:15:29.542 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  i.g.c.stats.writer.ConsoleDataWriter - Initialized
+15:15:29.563 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  i.g.c.stats.writer.LogFileDataWriter - Initialized
+15:15:30.650 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.655 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.665 [GatlingSystem-akka.actor.default-dispatcher-5] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.668 [GatlingSystem-akka.actor.default-dispatcher-7] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.683 [GatlingSystem-akka.actor.default-dispatcher-6] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.687 [GatlingSystem-akka.actor.default-dispatcher-8] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.691 [GatlingSystem-akka.actor.default-dispatcher-13] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.697 [GatlingSystem-akka.actor.default-dispatcher-9] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.704 [GatlingSystem-akka.actor.default-dispatcher-10] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:30.705 [GatlingSystem-akka.actor.default-dispatcher-4] INFO  i.g.core.controller.inject.Injector - StoppedInjecting
+15:15:30.711 [GatlingSystem-akka.actor.default-dispatcher-11] INFO  com.intuit.karate - scenario called at line: 9 by tag: @CreateUser
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-11] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-8] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-13] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-6] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-5] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.068 [GatlingSystem-akka.actor.default-dispatcher-10] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-11] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-7] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-6] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-5] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-13] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-8] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.069 [GatlingSystem-akka.actor.default-dispatcher-9] INFO  com.intuit.karate - [print] mutation createUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $street: String
+    $city: String
+    $zipcode: String
+    $phone: String
+    $website: String
+    $companyName: String!
+
+){
+    createUser(
+        input:{
+            name: $name
+            username: $username
+            email: $email
+            address: {
+                street: $street
+                city: $city
+                zipcode: $zipcode
+            }
+            phone: $phone
+            website: $website
+            company: {
+                name: $companyName
+            }
+        }
+    ){
+        id
+        name
+        username
+        email
+    }
+}
+15:15:31.070 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.070 [GatlingSystem-akka.actor.default-dispatcher-10] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.070 [GatlingSystem-akka.actor.default-dispatcher-7] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:31.070 [GatlingSystem-akka.actor.default-dispatcher-9] INFO  com.intuit.karate - [print] {
+  "name": "Patricia Lebsack",
+  "username": "Karianne",
+  "email": "Julianne.OConner@kory.org",
+  "street": "Hoeger Mall",
+  "city": "South Elvis",
+  "zipcode": "53919-4257",
+  "phone": "493-170-9623 x156",
+  "website": "kale.biz",
+  "companyName": "Robel-Corkery"
+}
+
+15:15:32.191 [GatlingSystem-akka.actor.default-dispatcher-9] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.199 [GatlingSystem-akka.actor.default-dispatcher-5] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.885 [GatlingSystem-akka.actor.default-dispatcher-8] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.907 [GatlingSystem-akka.actor.default-dispatcher-6] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.916 [GatlingSystem-akka.actor.default-dispatcher-13] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.920 [GatlingSystem-akka.actor.default-dispatcher-3] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.936 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.936 [GatlingSystem-akka.actor.default-dispatcher-11] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.972 [GatlingSystem-akka.actor.default-dispatcher-7] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:32.999 [GatlingSystem-akka.actor.default-dispatcher-10] INFO  com.intuit.karate - [print] {
+  "data": {
+    "createUser": {
+      "name": "Patricia Lebsack",
+      "id": "11",
+      "email": "Julianne.OConner@kory.org",
+      "username": "Karianne"
+    }
+  }
+}
+
+15:15:33.012 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  i.g.core.controller.inject.Injector - All users of scenario Create User are stopped
+15:15:33.012 [GatlingSystem-akka.actor.default-dispatcher-2] INFO  i.g.core.controller.inject.Injector - Stopping
+15:15:33.013 [GatlingSystem-akka.actor.default-dispatcher-6] INFO  i.gatling.core.controller.Controller - Injector has stopped, initiating graceful stop
+15:15:33.049 [GatlingSystem-akka.actor.default-dispatcher-7] INFO  i.gatling.core.controller.Controller - StatsEngineStopped
+15:15:33.128 [main] INFO  i.gatling.charts.stats.LogFileReader - Collected ArrayBuffer(/Users/sintaadiyasa/Documents/ISQA/gatling-isqa/target/gatling/usersimulation-20210527081529496/simulation.log) from usersimulation-20210527081529496
+15:15:33.142 [main] INFO  i.gatling.charts.stats.LogFileReader - First pass
+15:15:33.162 [main] INFO  i.gatling.charts.stats.LogFileReader - First pass done: read 31 lines
+15:15:33.179 [main] INFO  i.gatling.charts.stats.LogFileReader - Second pass
+15:15:33.246 [main] INFO  i.gatling.charts.stats.LogFileReader - Second pass: read 31 lines
