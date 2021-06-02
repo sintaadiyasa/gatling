@@ -1,4 +1,4 @@
-# Testing GraphQL using Karate
+# Performance Test using Karate-Gatling
 
 ## Requirement
 * Java Development Kit
