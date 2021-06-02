@@ -1,3 +1,0 @@
-15:15:04.558 feature call failed: classpath:mock/user/reUsableUserSteps.feature
-arg: null
--unknown-:6 - javascript evaluation failed: Java.type('dataGenerator'), java.lang.ClassNotFoundException: dataGenerator

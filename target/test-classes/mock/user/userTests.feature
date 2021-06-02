@@ -2,7 +2,6 @@ Feature: User
 
   Background:
     * url urlBase
-#    * def testData = Java.type('dataGenerator')
     Given header User-Agent = 'lalala'
 
   @Development @parralel=false @CreateUser
